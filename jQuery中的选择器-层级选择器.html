@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// 层级选择器
+			// 1 子代选择器
+			// 		符号： >
+			// 	 作用：获取父元素中的子元素
+			// $("#cc > li").css("background", "yellow");
+			$("#cc > .hot").css("background", "yellow");
+			
+			// 2 后代选择器
+			// 		符号：空格
+			// 	 作用：获取父元素中的所有后代元素（也包含了子元素）
+			$("#cc li").css("font-size", "30px");
+		});
+	</script>
+</head>
+<body>
+	<ul id="cc">
+		<li>第01个孩子</li>
+		<li class="hot">第02个孩子</li>
+		<li>第03个孩子</li>
+		<li class="hot">第04个孩子</li>
+		<li>
+			第05个孩子
+			<ul>
+				<li>第1个孙子</li>
+				<li>第2个孙子</li>
+				<li>第3个孙子</li>
+			</ul>
+		</li>
+		<li class="hot">第06个孩子</li>
+		<li>第07个孩子</li>
+		<li class="hot">第08个孩子</li>
+		<li>第09个孩子</li>
+		<li>第10个孩子</li>
+	</ul>
+
+	<ul id="linlin">
+		<li>第01个孩子</li>
+		<li>第02个孩子</li>
+		<li>第03个孩子</li>
+		<li>第04个孩子</li>
+		<li>第05个孩子</li>
+		<li>第06个孩子</li>
+		<li>第07个孩子</li>
+		<li>第08个孩子</li>
+		<li>第09个孩子</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery入口函数与js入口函数的区别（理解）</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+    
+    // 区别：
+    // 1 入口函数的执行时机不同
+    // 		window.onload: 是要等到页面文档以及页面中所有的外部资源
+    // 		（引入的js文件、css、img）全部加载完成之后，才会执行事件中的代码！
+    // 		jQuery的入口函数：是等到页面文档树加载完成就会执行事件中的代码！
+    // 		
+    // 		jQuery的入口函数要比 window.onload 执行的时机要早
+    // 		
+    // 2 书写的个数不同
+    // 		window.onload 只能绑定一次事件，如果绑定多次，后面的事件会覆盖前面的事件
+    // 		jQuery的入口函数可以有多个
+
+
+    //js的入口函数
+    // window.onload 是等到页面中文档DOM树以及所有的图片、js、css等所有的文件
+    // 加载完成了之后，才执行！
+    // 
+    window.onload = function() {
+        console.log("我是js的入口函数");
+    };
+
+    //第一种入口函数写法
+    // jQuery入口函数会等待文档树的加载完成，但是不会等待图片以及文件的加载。
+    $(document).ready(function() {
+        console.log("我是jQuery的第一种入口函数的写法");
+    });
+
+
+    //第二种入口函数写法
+    $(function() {
+        console.log("我是jQuery的第二种入口函数的写法");
+    });
+    </script>
+</head>
+
+<body>
+    <img src="http://img.daimg.com/uploads/allimg/160324/1-160324232117.jpg">
+    <img src="http://img.daimg.com/uploads/allimg/160318/1-16031P01P0.jpg">
+    <img src="http://img.daimg.com/uploads/allimg/160318/1-16031P01332.jpg">
+    <img src="http://img.daimg.com/uploads/allimg/160608/1-16060R35630.jpg" alt="">
+    <img src="http://img.daimg.com/uploads/allimg/160531/1-160531224303.jpg" alt="">
+</body>
+
+</html>

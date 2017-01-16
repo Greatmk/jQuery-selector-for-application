@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    div {
+        height: 200px;
+        background: pink;
+        margin-bottom: 20px;
+        font-size: 30px;
+        display: none;
+    }
+    
+    input {
+        width: 158px;
+        height: 40px;
+        font-size: 26px;
+        font-weight: bold;
+    }
+    </style>
+
+<script type="text/javascript">
+        // 思路：
+        // 1 找到页面中的按钮
+        // 2 绑定单击事件
+        // 3 设置内容和展示div
+
+        window.onload = function () {
+            // 1 通过id按钮
+            var btnShow = document.getElementById("btnShow");
+            var btnSetHtml = document.getElementById("btnSetHtml");
+
+
+            // 2 绑定单击事件
+            btnShow.onclick = function () {
+                // 获取到页面中的div元素
+                // 伪数组！
+                var dvs = document.getElementsByTagName("div");
+                for (var i = 0; i < dvs.length; i++) {
+                    dvs[i].style.display = "block";
+                }
+            };
+
+            // 2 绑定单击事件
+            btnSetHtml.onclick = function () {
+                // 获取到页面中的div元素
+                // 伪数组！
+                var dvs = document.getElementsByTagName("div");
+                for (var i = 0; i < dvs.length; i++) {
+                    // dvs[i].innerHTML = "congcong";
+                    // 
+                    // 新版本的火狐浏览器已经支持innerText属性
+                    // textContent
+                    dvs[i].innerText = "大家好！欢迎来到GitHub！";
+                }
+            };
+        };
+
+		// window.onload = function() {
+		// 	alert(123);
+		// };
+
+
+		// 通过js来实现这个效果存在的问题：
+		// 1 window.onload 这个入口函数存在事件覆盖的问题
+		// 2 innerText存在浏览器兼容性问题
+		// 3 代码冗余
+		// 4 实现简单的功能代码繁琐
+		// 5 代码的容错性低
+		// 6 实现动画效果繁琐
+		// ....
+    </script>
+</head>
+
+<body>
+    <input type="button" value="显示div" id="btnShow" />
+    <input type="button" value="设置内容" id="btnSetHtml" />
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+</body>
+
+</html>

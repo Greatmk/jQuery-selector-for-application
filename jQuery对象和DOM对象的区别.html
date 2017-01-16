@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		// 什么是 jQuery对象？
+		// 什么是 DOM对象？
+		// 类比洗衣服这件事中的东西：
+		// 		DOM对象就相当于			衣服
+		// 		jQuery对象就相当于		洗衣机
+
+
+		// 什么是DOM对象？
+		// 通过DOM提供的API（方法），获取到的元素对象，就是DOM对象
+		// 获取DOM对象的方法：
+		// 		1 getElementById("id") 获取到的元素就是一个DOM对象
+		// 		2 getEelmentsByTagName("div") 这个方法的返回值是一个伪数组
+		// 					伪数组中的每一个元素才是DOM对象
+		// 					getEelmentsByTagName("div")[0] 这才是DOM对象
+		// 		DOM对象的特点：具有 innerText/innerHTML/style/value/className/getAttribute()
+		// 							这些属性和方法
+		// 
+		var dvs = document.getElementsByTagName('div');
+		// dvs.style.background = "pink";
+
+
+		// 什么是jQuery对象？
+		// 通过jQuery获取元素的方法，获取到的对象就是jQuery对象
+		// 获取jQuery对象的方法：
+		// 		$("#dv") / $("div") 通过这种方法获取到的对象，就是jQuery对象
+		// 		jQuery对象的特点： show() / text()
+
+		// jQuery对象相当于： 洗衣机
+		// DOM对象相当于：    衣服
+		// 
+		// 问题：jQuery对象能够使用 DOM对象中的属性和方法吗？ 不能！
+		// 问题：DOM对象能够使用jQuery对象中的属性和方法吗？ 不能！
+
+		// DOM对象中没有jQuery对象中的属性和方法，所以不能调用
+		// dvs[0].show();
+		// jQuery对象中也没有DOM对象中的属性和方法，所以也不能使用！
+		$("div").style.background = "red";
+
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		// jQuery对象转化为DOM对象:
+		// 		说白了就是从jQuery对象中取出DOM对象
+		// 		jQuery对象中就是一个一个的DOM对象，所谓的转化：
+		// 			其实就是 将 DOM对象从 jQuery对象中取出来！
+		// 			类比：从洗衣机中取衣服！
+		var $dv = $("div");
+		var dv1 = $dv[0];
+		var dv2 = $dv[1];
+		var dv3 = $dv[2];
+		
+		// DOM对象转化为jQuery对象：
+		// 		只需要将DOM对象当作参数传给 $函数即可！
+		var dv = document.getElementsByTagName("div")[0];
+		var $dv1 = $(dv);
+	</script>
+</body>
+</html>

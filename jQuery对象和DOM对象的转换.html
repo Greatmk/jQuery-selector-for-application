@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		// jQuery的入口函数
+		$(document).ready(function() {
+			// 通过DOM的方法来获取到 衬衣
+			var cloths = document.getElementsByTagName('li');
+
+			// 衬衣：
+			cloths[0].style.background = "hotpink";
+
+			// // 通过jQuery的方式来获取到衣服
+			// var $lis = $("li");
+
+			// // 衬衣：
+			// // $lis[0] 是在将jQuery对象转化为：DOM对象
+			// $lis[0].style.background = "yellowgreen";
+
+			// css方法是jQuery中的一个方法，只有jQuery对象才能使用
+			// $( DOM对象 ) 是在将DOM对象转化为jQuery对象
+			$( cloths[0] ).css("background", "yellow");
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>衬衣</li>
+		<li>牛仔裤子</li>
+		<li>袜子</li>
+		<li>内裤</li>
+	</ul>
+</body>
+</html>

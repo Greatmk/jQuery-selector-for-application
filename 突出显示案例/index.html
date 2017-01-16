@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background: #000;
+        }
+
+        .wrap {
+            margin: 100px auto 0;
+            width: 630px;
+			height: 394px;
+            padding: 10px 0 0 10px;
+            background: #000;
+            overflow: hidden;
+            border: 1px solid #fff;
+        }
+
+        .wrap li {
+            float: left;
+            margin: 0 10px 10px 0;
+
+        }
+
+        .wrap img {
+            display: block;
+			border: 0;
+        }
+    </style>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        // 思路：
+        // 1 获取到页面中所有的li元素，然后绑定鼠标移上来的事件
+        // 2 让当前li元素变为高亮的状态，让其他兄弟元素变为暗的状态
+        //      opacity
+        
+        // 获取li元素的方式：
+        // $("li")
+        // $(".wrap li")
+        // $(".wrap > ul > li")
+        // $(".wrap").children("ul").children() （children()方法的参数可以省略）
+        // 
+        // 后代元素对应的方法：$(".wrap").find(选择器)
+        // 注意： find方法的参数是必须要传入的！
+        // 作用：用来获取指定元素的所有后代元素，作用与 后代选择器 相同（空格）
+        //      $(".wrap li")
+        
+        // 入口函数！
+        $(document).ready(function() {
+            // 1 获取到页面中所有的li元素，然后绑定鼠标移上来的事件
+            $(".wrap").find("li").mouseenter(function() {
+                // 2 让当前li元素变为高亮的状态，让其他兄弟元素变为暗的状态
+                // 当前元素： $(this)
+                // 如何获取到当前元素的所有兄弟元素： 
+                //  $(this).siblings("li") 这个方法的参数是可以省略的
+                //  作用：用来获取当前元素的所有兄弟元素
+
+                $(this).css("opacity", 1).siblings("li").css("opacity", 0.3);
+            });
+
+            // 3 给大盒子（div元素）绑定鼠标离开的事件，让所有的li变为高亮状态
+            $(".wrap").mouseleave(function() {
+                $(this).find("li").css("opacity", 1);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li><a href="#"><img src="images/01.jpg" alt=""/></a></li>
+        <li><a href="#"><img src="images/02.jpg" alt=""/></a></li>
+        <li><a href="#"><img src="images/03.jpg" alt=""/></a></li>
+        <li><a href="#"><img src="images/04.jpg" alt=""/></a></li>
+        <li><a href="#"><img src="images/05.jpg" alt=""/></a></li>
+        <li><a href="#"><img src="images/06.jpg" alt=""/></a></li>
+    </ul>
+</div>
+</body>
+</html>

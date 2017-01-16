@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		// 过滤选择器
+		// 
+		// :odd	奇数行选择器，配合其他的选择器来使用
+		// 		作用：获取索引号为奇数行的所有元素
+		// :even 偶数行选择器
+		// 		作用：获取索引号为偶数行的所有元素
+		
+		$(document).ready(function() {
+			// 实现隔行变色的效果
+			$("li:odd").css("background", "hotpink");
+			$("li:even").css("background", "#def");
+
+			// :eq(index)  ==> equals 相等
+			// index：表示索引号
+			// 作用：选择指定索引号的元素
+
+			// 选择所有li元素中，索引号为6的li元素
+			// $("li:eq(6)").css("font-size", "30px");
+			$("li:lt(6)").css("font-size", "30px");
+
+			// 属性选择器
+			// 选择具有id属性的所有元素
+			$("li[id]").css("color", "red");
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>这是li元素 01</li>
+		<li>这是li元素 02</li>
+		<li>这是li元素 03</li>
+		<li>这是li元素 04</li>
+		<li id>这是li元素 05</li>
+		<li>这是li元素 06</li>
+		<li>这是li元素 07</li>
+		<li>这是li元素 08</li>
+		<li>这是li元素 09</li>
+		<li>这是li元素 10</li>
+	</ul>
+</body>
+</html>

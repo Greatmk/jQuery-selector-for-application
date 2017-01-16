@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		// jQuery 选择器：
+		// 就是jQuery中提供的用来获取页面中的DOM元素的一些字符串，一般配合
+		// $( 选择器 ) 这样调用，就能获取到页面中的元素了！
+
+		$(document).ready(function() {
+			// id选择器
+			// 符号：#
+			// 作用：匹配到页面中id为指定值的DOM元素，
+			// 		  获取之后，是一个jQuery对象（$("#cc")）
+			// $("#cc")[0].style.background = "hotpink";
+
+			// jQuery中设置样式的方法：
+			// 只有jQuery对象才能使用这个方法：
+			// 第一个参数表示：要设置的样式属性的名称
+			// 第二个参数表示：要设置的样式属性的值
+			// $("#cc").css("background", "hotpink");
+
+			// 标签选择器
+			// 作用：匹配页面中指定标签名的元素
+			// $("li").css("font-size", "30px");
+
+			// 类选择器
+			// 符号：.
+			// 作用：匹配页面中指定类名的元素（只要具有这个类就能够获取到）
+			// $(".hot").css("background", "hotpink");
+
+			// 通配符选择器
+			// 符号：*
+			// 作用：获取页面中所有的元素
+			// 尽量少用，获取配合其他的选择器来使用
+			// $("*").css("color", "yellow");
+
+			// 并集选择器
+			// 符号：,
+			// 作用：将 以,分割的多个选择器匹配的元素 一起返回
+			// 比如："li,p,div", 这个选择器的作用：获取div以及p以及li元素
+			// $("li,p,div").css("font-size", "30px");
+
+			// 交集选择器
+			$("li.hot").css("background", "hotpink");
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>cc有很多衣服，琳琳也有</li>
+		<li class="hot">cc有很多衣服，琳琳也有</li>
+		<li>cc有很多衣服，琳琳也有</li>
+		<li id="cc">cc有很多衣服，琳琳也有</li>
+		<li>cc有很多衣服，琳琳也有</li>
+		<li>cc有很多衣服，琳琳也有</li>
+		<li class="hot">cc有很多衣服，琳琳也有</li>
+		<li>cc有很多衣服，琳琳也有</li>
+		<li>cc有很多衣服，琳琳也有</li>
+		<li>cc有很多衣服，琳琳也有</li>
+	</ul>
+
+	<ul>
+		<li>cc有很多衣服，琳琳也有 -------1</li>
+		<li class="hot">cc有很多衣服，琳琳也有 -------1</li>
+	</ul>
+
+	<p class="hot">这是一个p元素</p>
+	<p>这是一个p元素 没有hot类</p>
+	<div>这是div元素</div>
+</body>
+</html>
